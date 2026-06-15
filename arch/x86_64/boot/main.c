@@ -1,6 +1,6 @@
-#include <arch/gdt.h>
 #include <kernel/multiboot2.h>
 
+#include "gdt.h"
 #include "main.h"
 
 void kmain(u32 magic, paddr_t)

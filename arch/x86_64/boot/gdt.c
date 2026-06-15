@@ -1,5 +1,6 @@
-#include <arch/gdt.h>
 #include <kernel/cdefs.h>
+
+#include "gdt.h"
 
 static u64 gdt[NGDT_ENTRIES] __aligned(16) = {
 	[GDT_NULL] = 0x0,

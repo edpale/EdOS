@@ -1,10 +1,11 @@
 #include <arch/cpufeatures.h>
 #include <arch/cpuflags.h>
-#include <arch/gdt.h>
 #include <arch/param.h>
 #include <arch/pte.h>
 #include <arch/vmparam.h>
 #include <kernel/multiboot2.h>
+
+#include "gdt.h"
 
 .set MB2_HEADER_LEN, mb2_header_end - mb2_header_start
 
