@@ -9,7 +9,7 @@ LINKER_TEMPLATE = arch/$(ARCH)/link.ld.S
 include arch/$(ARCH)/config.mk
 
 CFLAGS  := -ffreestanding -O2 -Wall -Wextra -Werror -Iinclude -Iarch/$(ARCH)/include \
-		   -MMD -MP -mcmodel=kernel
+		   -MMD -MP -mcmodel=kernel -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition
 ASFLAGS := 
 LDFLAGS := -T $(LINKER_SCRIPT)
 LDLIBS   = $(shell $(CC) $(CFLAGS) -print-libgcc-file-name 2>/dev/null)
