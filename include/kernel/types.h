@@ -1,6 +1,7 @@
 #ifndef EDOS_TYPES_H
 #define EDOS_TYPES_H
 
+#include <stddef.h>
 #include <stdint.h>
 
 typedef uint8_t  u8;
@@ -13,7 +14,6 @@ typedef int16_t i16;
 typedef int32_t i32;
 typedef int64_t i64;
 
-typedef u64 paddr_t;
 typedef uintptr_t vaddr_t;
 
 #endif

@@ -14,7 +14,7 @@
 #define MB2_MAGIC 0x36d76289
 
 #ifndef __ASSEMBLER__
-#include <kernel/types.h>
+#include <arch/types.h>
 
 
 void mb2_process_mbi(paddr_t mbi_paddr);

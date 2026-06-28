@@ -44,7 +44,7 @@
 #define SEG_DESC_FLAGS_CODE64 (SEG_DESC_LONG_CODE | SEG_DESC_G)
 
 #ifndef __ASSEMBLER__
-#include <kernel/types.h>
+#include <arch/types.h>
 #include <kernel/cdefs.h>
 
 struct gdt_ptr {
