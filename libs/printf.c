@@ -1,4 +1,5 @@
 #include <kernel/printf.h>
+#include <kernel/serial.h>
 #include <limits.h>
 
 typedef void (*putc_func_t)(int c, void *arg);
@@ -295,6 +296,30 @@ result_t ksnprintf(char *str, size_t size, const char *fmt, ...)
 
 	va_start(ap, fmt);
 	res = kvsnprintf(str, size, fmt, ap);
+	va_end(ap);
+	return res;
+}
+
+static void serial_putc_wrapper(int c, void *arg)
+{
+	(void)arg;
+	if (c == '\n')
+		serial_putc('\r');
+	serial_putc((char)c);
+}
+
+result_t kvprintf(const char *fmt, va_list ap)
+{
+	return kvformat(serial_putc_wrapper, NULL, NULL, fmt, ap);
+}
+
+result_t kprintf(const char *fmt, ...)
+{
+	va_list ap;
+	result_t res;
+
+	va_start(ap, fmt);
+	res = kvprintf(fmt, ap);
 	va_end(ap);
 	return res;
 }

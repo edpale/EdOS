@@ -14,7 +14,7 @@ ASFLAGS :=
 LDFLAGS := -T $(LINKER_SCRIPT)
 LDLIBS   = $(shell $(CC) $(CFLAGS) -print-libgcc-file-name 2>/dev/null)
 
-SUBDIRS     := arch/$(ARCH) libs
+SUBDIRS     := arch/$(ARCH) kernel libs
 MASTER_OBJS :=
 
 $(foreach dir,$(SUBDIRS), \
