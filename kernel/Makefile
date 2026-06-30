@@ -1,1 +1,1 @@
-OBJS += serial.o
+OBJS += serial.o multiboot2.o

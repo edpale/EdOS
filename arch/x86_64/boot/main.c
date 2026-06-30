@@ -5,12 +5,12 @@
 #include "gdt.h"
 #include "main.h"
 
-void kmain(u32 magic, paddr_t)
+void kmain(u32 magic, paddr_t mbi_addr)
 {
 	if (magic != MB2_MAGIC)
 		return;
 
 	gdt_init();
 	serial_init();
-	kprintf("Hi from EdOS!\n");
+	mb2_process_info(mbi_addr);
 }
