@@ -1,1 +1,1 @@
-OBJS += printf.o
+OBJS += printf.o string.o
