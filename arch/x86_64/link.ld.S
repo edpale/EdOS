@@ -18,6 +18,8 @@ SECTIONS
 
 	. += KERN_BASE_VIRT;
 
+	_kernel_start = .;
+
 	.text ALIGN(4K) : AT(ADDR(.text) - KERN_BASE_VIRT)
 	{
 		*(.text)
